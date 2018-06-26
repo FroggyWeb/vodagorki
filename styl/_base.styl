@@ -1,0 +1,286 @@
+/*!Default section_______________________________________________*/
+
+$cf {
+*zoom: 1;
+    &:before, &:after {
+        content: '';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+$hide-text{
+    font: 0/0 sans-serif;
+    text-shadow: none;
+    color: transparent;
+}
+
+$pseudo {
+  content: " "
+  display: inline-block
+  vertical-align: middle
+}
+
+
+
+$wysiwyg 
+  & > h1, h2, h3, h4
+    margin-bottom 40px
+    
+
+  h2, h3
+    text-transform uppercase
+    font 30px $f-header
+    margin-bottom 40px
+    color $c-hover
+    margin-top 60px
+    &:first-child
+      margin-top 0
+  
+  
+  & > ul, ol 
+    overflow hidden
+  & > li
+    margin-bottom 10px
+    display block
+    p 
+      margin-bottom 0
+  
+  & > ul li 
+    &:before
+      content " "
+      background-image: url('../img/element.png');
+      background-repeat: no-repeat;
+      display inline-block
+      vertical-align middle
+      display inline-block
+      width: 12px;
+      height: 9px;
+      background-position: -266px -74px;
+      margin-right 10px
+  & > ol
+    counter-reset li
+    li
+      padding-left 20px
+      &:before
+        content counter(li)'.'
+        counter-increment li
+        display inline-block
+        width 20px
+        margin-left -20px 
+        color $c-main
+      
+
+  & > h1, h2, h3, h4, h5, h6
+    margin-bottom: 20px
+    
+  p, ul, ol, pre, blockquote, table 
+    margin-bottom: 20px
+    line-height: 1.8em
+    
+
+
+  a 
+    color: $c-main
+    text-decoration underline
+    &:hover
+      color: $c-hover
+  
+  strong
+    color $c-cheader
+
+/*!_____________________________________________________*/   
+a
+  color: $c-text
+  text-decoration none
+  outline none
+  transition 1s
+  transition-property color, background-color
+  transition-duration 0.3s
+  //transition-property 
+  
+
+li
+  list-style none
+  
+.wysiwyg
+  @extend $wysiwyg
+
+  
+.ico
+  display inline-block
+  vertical-align middle 
+  
+
+.btn_ok {
+  btn();
+  background-color: $btn-ok
+  border: 0;
+  border-radius 2em 
+  box-sizing: border-box;
+  color: #a66036;
+  cursor: pointer
+  display: inline-block;
+  font-family: $f-header
+  font-size: 18px
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+    background-color: darken($btn-ok, 20%)
+    color: #a66036
+  }
+  
+  &:active {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.btn + .btn {
+  margin-left: 20px;
+}
+
+.wysiwyg .btn {
+  text-decoration none
+  margin-bottom 20px
+}
+
+// .btn_ok,
+// .wysiwyg .btn_ok
+//   color: #fff;
+//   font-size 20px
+//   font-family: $f-header
+//   background-color: #719344
+//   padding: 0.7em 1.5em;
+//   &:hover 
+//     background-color: darken(#719344, 20%);
+//     color: #fff;
+  
+
+.btn_wrap {
+  margin 20px 0 
+  text-align center
+}
+
+.fl_left
+  float left
+  margin 0 20px 20px 0
+  
+.fl_right
+  float right
+  margin 0 0 20px 20px
+
+.disabled 
+  visibility hidden
+
+input 
+  box-sizing: border-box;
+
+
+input, select, textarea 
+  font: $f-size $f-base;
+
+
+input[type='text'],
+input[type='password'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+select,
+textarea 
+  -webkit-appearance: none;
+  box-sizing border-box
+  border: 1px solid transparent;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color #d4f8ff 
+  font-size 12px
+  border-radius 10px 
+  color #3ca1be
+  transition 0.3s all
+  &:focus 
+    outline: none;
+    border-color: #d9eff4
+    background-color #EFFCFF 
+    
+input::-moz-focus-inner {
+  border: 0;
+}
+
+input, textarea
+  &::-webkit-input-placeholder
+    color: $c-placeholder
+    opacity 1
+input, textarea    
+  &:-moz-placeholder
+    color: $c-placeholder
+    opacity 1
+input, textarea 
+  &::-moz-placeholder
+    color: $c-placeholder
+    opacity 1
+input, textarea 
+  &:-ms-input-placeholder
+    color: $c-placeholder
+    opacity 1
+
+
+label {
+  display: block;
+  padding-bottom: 4px;
+}
+
+input[type='checkbox'] + label,
+input[type='radio'] + label {
+  position: relative;
+  top: -3px;
+  display: inline-block;
+  margin-left: 3px;
+}
+
+textarea {
+    resize: none;
+}
+
+.form_line {
+  margin-bottom: 20px;
+  clear: both;
+  position relative
+  @extend $cf;
+}
+
+
+/*!TABLE_______________________________________ */
+table 
+  width: 100%
+  border-spacing: 0
+  background-color: #FFF
+  border: 1px solid $c-form-el
+
+tr
+  border: 1px solid $c-form-el
+
+th 
+  vertical-align: middle
+  font-family $f-header 
+  font-size: 13px
+  font-weight: 700
+  text-align: left
+  color: $c-cheader
+
+
+th, td 
+  border: 1px solid $c-form-el;
+  padding: 5px;
+

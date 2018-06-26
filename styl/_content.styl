@@ -1,0 +1,481 @@
+
+/*!Стили Главной страницы*/
+
+.article 
+  @extend $wysiwyg
+  .big_link
+    font-size 24px
+    text-decoration none 
+
+.img_title_wrap
+  position relative
+  overflow hidden
+  .img_title_content
+    position absolute
+    top 0
+    left 0
+  a
+    display block
+  &:hover
+    a 
+      color $c-text
+    .img_title_content
+      bottom 0
+    
+
+
+.progect_park_link
+  height 400px
+  position relative
+  z-index 300
+  &:hover
+    .img_title_content
+      margin-top -50px
+  .img_title_content
+    height 310px
+  img
+    max-width auto
+    min-width 100%  
+    height 100% 
+  .img_title
+    font-size 30px 
+    color $c-hover
+  .img_title_sub
+    margin 10px 0
+    //text-align center
+  .img_title_block
+    //text-align center
+    padding 10px 20px
+    box-sizing border-box
+  .i_arr_left
+    @extend $a_left_a    
+  .i_key
+    @extend $key
+    margin-right 5px
+    
+  
+ 
+.video_thumb
+  position relative
+  margin-bottom 10px
+  &:after
+    content " "
+    @extend .i-elem
+    @extend $video_item
+    position absolute
+    top 50%
+    left 50%
+    margin -42px
+    
+    
+.video_item
+  &:hover
+    .video_thumb:before
+      content " "
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      background-color rgba(0,0,0,0.2) 
+    .video_descript
+      color $c-hover-m
+      text-decoration underline
+    
+.video_descript
+  margin-top 10px
+  color $c-hover
+  
+.video_descript_big
+  font-size 18px
+  
+.file_list
+  margin-bottom 40px
+  
+.file_list_item
+  border solid $c-main
+  border-width 1px 0px 
+  padding 10px 0
+  cf()
+  & + .file_list_item
+    border-top none 
+  .file_ico
+    color $c-text
+    float left
+    &:before
+      content " "
+      display inline-block
+      margin-right 10px
+      @extend .i-elem
+    &:hover
+      color $c-hover-m
+      text-decoration underline
+  
+    &[href$=".pdf"]:before
+        @extend $pdf
+    &[href$=".ppt"]:before, &[href$=".pptx"]:before
+        @extend $pp
+    &[href$=".doc"]:before, &[href$=".docx"]:before
+        @extend $word
+
+.file_list_info
+  float right
+  line-height 24px 
+
+.download
+  &:before
+    content ""
+    @extend .i-elem
+    @extend $download
+    margin-right 10px
+    
+
+
+.project_gall
+  position relative
+  .bg_image
+    width 100%
+    height 180px
+    position absolute
+    z-index -1
+    top -180px
+    left 0
+    background url('../img/buble.jpg') top center no-repeat
+    
+.img_title_block
+  background-color #FFF
+  box-sizing border-box
+  padding 10px 20px
+   
+  
+
+.img_title
+  font-family $f-header
+  font-size 24px 
+  text-transform uppercase
+  
+.img_title_content
+  transition 0.4s all
+  width 100%
+
+
+.project_gall_item
+  z-index 100
+  span(1/4) 
+  border 1px solid #fff
+  box-sizing border-box
+  position relative 
+  height 227px 
+  &:hover
+    .img_title_content
+      margin-top -67px
+ 
+    //
+  .img_title_content
+    height 225px
+    display block
+    box-sizing border-box
+    img
+      vertical-align top
+      height 100% 
+      max-width none 
+    
+.blog_intro
+  background url('../img/wave.png') top center no-repeat
+  padding-top 40px 
+  cf()
+  
+.blog_intro_item
+  col(1/3, cycle: 3, gutter: 2)
+  font-size 12px
+  box-sizing border-box
+  border 1px solid $c-light-bdr
+  padding 15px
+  height 390px
+  position relative
+  &:before
+    content " "
+    @extend .i-elem
+    @extend $a_left
+    position absolute
+    bottom 10px
+    right 10px
+  &:hover:before
+    @extend $a_left_a
+  .blog_intro_link
+    display block
+    height 100%
+  
+.blog_intro_header
+  border-bottom 1px solid $c-light-bdr
+  padding-bottom 5px
+  margin-bottom 10px
+  cf()
+
+.blog_intro_title
+  color $c-header
+  margin 10px 0 
+  font-size 18px
+  
+.blog_intro_section
+  color $c-text-d
+  float left
+  width 160px 
+  position relative
+  padding-left 25px
+  &:before
+    content ""
+    @extend .i-elem
+    @extend $news
+    position absolute
+    top 0
+    left 0
+    
+.blog_intro_data
+  position relative
+  color $c-text-d
+  padding-left 25px
+  float right
+  &:before
+    content " "
+    @extend .i-elem
+    @extend $date
+    position absolute
+    top 0
+    left 0
+
+  
+  
+
+/*!Стили внутренних элементов*/
+.similar_block_item
+  col(1/3, 0, 3)
+  &:hover
+    a
+      color: $c-hover
+
+.similar_block_descript
+  margin-top 10px
+  font-weight bold
+  
+.fold_block
+ clear both
+ 
+.video_header
+  .icon
+    @extend .i-elem
+    @extend $video
+  &:hover, &.js-fold
+    .icon
+      @extend $video_a
+      
+.mereinfo_header
+  .icon
+    @extend .i-elem
+    @extend $info
+  &:hover, &.js-fold
+    .icon
+      @extend $info_a
+ 
+.fold_header
+  font 30px $f-header
+  border-bottom 2px solid #b6dadd 
+  margin-bottom 20px
+  position relative
+  cursor pointer
+  .icon_fold
+    content " "
+    @extend .i-elem
+    @extend $a_up
+    position absolute
+    right 15px
+    top 12px
+  &:after
+    content " "
+    @extend .i-elem
+    @extend $menu_line_down
+    position absolute
+    bottom -6px
+    right 0
+  &:hover, &.js-fold
+    color $c-main
+    border-color $c-main
+    .icon_fold
+      @extend $a_up_a
+    &:after
+      @extend $menu_line_down_a
+      
+  .icon
+    margin-right 10px
+    margin-bottom 5px
+    
+
+
+.fold_header.minimized > .icon_fold
+  @extend $a_down
+.fold_header.minimized:hover > .icon_fold
+  @extend $a_down_a
+    
+  
+      
+    
+    
+      
+.product_info
+  margin 60px 0    
+    
+.fold_content
+  display none
+  margin-bottom 60px
+  cf()
+
+.get_price
+  margin-bottom 60px
+  &:before
+    content ""
+    @extend .i-elem
+    @extend $price
+    margin-right 10px
+    
+.review_block
+  .section_header
+    margin-bottom 20px
+
+.review_item
+  cf()
+  margin-bottom 40px 
+  
+.review_content
+  border 1px solid $c-light-bdr
+  font italic 14px/1.2 'Times New Roman', Times, serif
+  color #557E8B 
+  padding 15px 15px 15px 100px
+  position relative
+  &:before,
+  &:after
+    content " "
+    position absolute
+    background url('../img/review_sprite.png') no-repeat
+  &:before
+    width 15px
+    height 15px
+    background-position top right
+    top -1px
+    right -1px 
+  &:after
+    width 19px
+    height 15px
+    bottom -13px
+    left 65px
+  
+.review_photo, 
+  width 76px
+  height 76px
+  border-radius 50%
+  position absolute
+  top 15px
+  left 12px
+  
+.review_no_photo
+  position absolute
+  top 20px
+  left 25px
+  @extend .i-elem
+  @extend $cite
+  
+
+.review_signature
+  margin-top 10px
+  float right
+  width 207px
+  font-size 12px
+  .reviews_name
+    font-weight bold
+    
+
+.similar_project
+  clear both
+  margin-bottom 60px
+  cf()
+  .img_wrapper
+    height 145px
+    overflow hidden
+
+.similar_project_item
+  col(1/4, 0, 4)
+  .similar_project_title
+    font 24px/1em $f-header
+    margin-bottom 20px
+    text-transform uppercase
+    
+.similar_project_item a:hover
+  color: $c-hover 
+    
+.big_header
+  font 72px/1em $f-header
+  color $c-main
+  margin-bottom 20px
+  
+.object_content
+  col(8/12)
+  shift(4/12)
+  .slider_wrap
+    margin-bottom 0
+    
+.block_info
+  col(4/12)
+  shift(-8/12)
+  margin-top 20px
+  p
+    line-height 1.2em
+    
+.sep
+  clear both
+  border-top 1px solid $c-light-bdr 
+  
+.sep_img
+  height 100px
+  background url('../img/down_buble.jpg') no-repeat left top
+  margin-bottom -40px 
+  &.top_content
+    float left
+    margin-bottom 0
+    margin-top -115px
+    width 100%
+   
+  
+.repost_social
+  margin-top -10px
+  li
+    float left
+    margin-right 10px
+  a
+    @extend .s_soc
+    display inline-block
+    
+  .mail 
+    @extend $s_mail
+    &:hover
+      @extend $s_mail_a
+    
+  .vk 
+    @extend $s_vk
+    &:hover
+      @extend $s_vk_a
+      
+  .fb
+    @extend $s_fb
+    &:hover
+      @extend $s_fb_a
+      
+  .tw 
+    @extend $s_tw
+    &:hover
+      @extend $s_tw_a 
+           
+  .ok
+    @extend $s_ok
+    &:hover
+      @extend $s_ok_a
+    
+ 

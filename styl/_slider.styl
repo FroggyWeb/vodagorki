@@ -1,0 +1,191 @@
+/*!slider on index*/
+.bx-pager
+  position absolute
+  z-index 200
+
+ 
+
+.slide_main_wrap
+  position relative
+  overflow hidden
+  height 400px
+  .slide_main
+    display block
+    position relative
+    li
+      position relative
+      height 400px
+      display block
+      float left
+  img
+    max-width: none
+    min-height 100%
+  .bx-pager
+    top 250px
+    left 180px
+  .bx-pager-item
+    margin-right 5px
+    display inline-block
+    vertical-align middle
+  .bx-pager-link
+    @extend $hide-text
+    display inline-block
+    width 9px
+    height 9px
+    background-color: #399dac
+    border-radius 50% 
+    &.active
+      display inline-block
+      width 12px
+      height 12px
+      background-color #1d7886 
+ 
+ 
+.bg_slider_wrap
+  margin auto
+  height 0
+  position relative
+
+.bg_slider
+    display block
+    position absolute
+    left -234px
+    top 255px
+    z-index 50
+    width 100%
+    height 145px
+    background url("../img/slider_wave.png") no-repeat center top
+.slide_main_wrap:hover
+    .bg_slider
+      background-position right -250px 
+  
+.slide_name_wrap
+  color $c-text-d
+  position absolute
+  z-index 100
+  left 180px
+  top 290px
+  .main_name
+    font 30px $f-header
+    color #31565b
+    width 250px
+  
+  .sub_name
+    font-size 12px
+    width 250px
+  .slide_descr
+    margin-top 15px
+    width 400px
+    
+.slider_link
+  display block
+  height 100%
+  width 100%  
+  &:hover .main_name
+    color $c-hover
+    
+.slide_main_wrap    
+  .bx-controls-direction
+    visibility hidden
+    opacity 0
+    transition all 0.5s
+    a
+      display block
+      position absolute
+      top 50%
+      margin-top -30px
+      width 35px
+      height 60px
+      background url('../img/arrow_slider.png') top left no-repeat
+      @extend $hide-text
+    .bx-prev
+      left 20px
+    .bx-next
+      background-position top right 
+      right 20px  
+
+     
+@media screen and (max-width: 1300px)
+  .slide_name_wrap
+    left 20px
+  .slide_main_wrap
+    .bx-pager
+      left 20px
+
+
+/*!slider inside*/
+.slider_wrap
+  cf()
+  clear both
+  margin-bottom 40px   
+     
+  
+.slider_image
+  display block
+  overflow hidden
+  li
+    float left
+    display block
+  img
+    width 100%
+  
+    
+.slider_image_thumb
+  li
+    display block
+    float left
+  a
+    position relative
+    display inline-block
+    &:before
+      content " "
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+      background-color rgba(0,0,0,0.3)
+    &.active:before
+      content none 
+  
+    
+    
+.slider_thumb_wrap
+  width 80%
+  margin 20px auto 40px
+  position relative
+  
+  .bx-prev,
+  .bx-next
+    display block
+    position absolute
+    top 50%
+    margin-top -17px
+    width 35px
+    height 35px
+    @extend .i-elem
+    @extend $hide-text
+   
+  .bx-prev
+    @extend $sl_left
+    left -40px
+    &:hover
+      @extend $sl_left_a
+     
+  .bx-next
+    @extend $sl_right
+    right -40px
+    &:hover
+      @extend $sl_right_a
+ 
+ .slide_main_wrap:hover
+   .bx-controls-direction
+     visibility visible
+     opacity 1
+    
+.facts
+  padding 20px
+  background url('../img/bg_fact.jpg') no-repeat bottom right, linear-gradient(170deg, #dcf5ff, #f3fcff 28%)
+  background-color #F3FCFF 
+  margin-bottom 40px 
+    
